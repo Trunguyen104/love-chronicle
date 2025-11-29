@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 8%;
     --popover-foreground: 340 5% 95%;
 
-    --primary: 345 80% 70%;
+    --primary: 215 70% 72%;
     --primary-foreground: 0 0% 5%;
 
     --secondary: 38 90% 65%;
@@ -38,15 +38,30 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Custom romantic colors */
-    --rose-gold: 38 90% 65%;
-    --soft-pink: 345 80% 70%;
-    --deep-black: 0 0% 5%;
-    --warm-white: 340 5% 95%;
-    
-    /* Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(var(--soft-pink) / 0.2), hsl(var(--rose-gold) / 0.2));
-    --gradient-overlay: linear-gradient(180deg, hsl(var(--deep-black) / 0.8), hsl(var(--deep-black) / 0.3));
+   /* Replace Romantic Colors → Blue–Silver Colors */
+  --rose-gold: 210 15% 80%;          /* bạc */
+  --soft-pink: 215 60% 70%;          /* xanh dương nhạt */
+
+  --deep-black: 220 10% 8%;
+  --warm-white: 210 15% 92%;
+
+  /* New Blue–Silver Gradients */
+  --gradient-romantic: linear-gradient(
+    135deg,
+    hsl(215 60% 70% / 0.25),          /* xanh nhạt */
+    hsl(210 15% 80% / 0.25)           /* bạc */
+  );
+
+  --gradient-overlay: linear-gradient(
+    180deg,
+    hsl(220 10% 8% / 0.8),
+    hsl(220 10% 8% / 0.3)
+  );
+
+  /* Glow Effect (the glow around your text!) */
+  --glow-romantic: 0 0 40px hsl(215 70% 72% / 0.35); /* xanh bạc sáng */
+
+  --shadow-soft: 0 8px 32px hsl(0 0% 0% / 0.4);
     
     /* Shadows */
     --glow-romantic: 0 0 40px hsl(var(--soft-pink) / 0.3);
