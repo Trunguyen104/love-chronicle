@@ -1,17 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-interface Photo {
-  src: string;
-  alt: string;
-  caption?: string;
-}
-
-interface PhotoGalleryProps {
-  photos: Photo[];
-}
-
-const PhotoGallery = ({ photos }: PhotoGalleryProps) => {
+const PhotoGallery = ({ photos }) => {
   return (
     <section className="py-20">
       <div className="space-y-32 md:space-y-48">
@@ -23,8 +13,8 @@ const PhotoGallery = ({ photos }: PhotoGalleryProps) => {
   );
 };
 
-const PhotoItem = ({ photo, index }: { photo: Photo; index: number }) => {
-  const ref = useRef<HTMLDivElement>(null);
+const PhotoItem = ({ photo, index }) => {
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
