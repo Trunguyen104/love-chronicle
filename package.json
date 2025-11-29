@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://trunguyen104.github.io/love-chronicle/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
