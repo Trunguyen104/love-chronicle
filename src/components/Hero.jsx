@@ -6,27 +6,38 @@ const Hero = () => {
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-muted/20" />
       
-      {/* Animated particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-primary/30 rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-            }}
-            animate={{
-              y: [null, Math.random() * window.innerHeight],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: Math.random() * 5 + 5,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-        ))}
+      {/* Falling flowers */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(15)].map((_, i) => {
+          const flowers = ['🌸', '🌺', '🌼', '💐', '🌹'];
+          const flower = flowers[i % flowers.length];
+          const startX = Math.random() * 100;
+          const duration = Math.random() * 10 + 10;
+          const delay = Math.random() * 5;
+          
+          return (
+            <motion.div
+              key={i}
+              className="absolute text-2xl md:text-4xl"
+              style={{ left: `${startX}%` }}
+              initial={{ y: -100, opacity: 0, rotate: 0 }}
+              animate={{
+                y: window.innerHeight + 100,
+                opacity: [0, 1, 1, 0],
+                rotate: 360,
+                x: [0, Math.sin(i) * 100, 0],
+              }}
+              transition={{
+                duration: duration,
+                delay: delay,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              {flower}
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Hero content */}
